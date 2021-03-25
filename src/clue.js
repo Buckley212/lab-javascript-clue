@@ -1,5 +1,5 @@
 // ITERATION 1
-
+//Class declarations
 class Suspect {
     constructor(firstName, lastName, occupation, age, description, image, color){
         this.firstName = firstName;
@@ -25,7 +25,6 @@ class Weapon {
         this.weight = weight
     }
 }
-
 
 //Object Declarations
 const mrGreen = new Suspect('Jacob', 'Green','Entrepreneur', 45, 'He has a lot of connections','https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg', 'green');
@@ -72,13 +71,11 @@ const weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trop
 
 // ITERATION 2
 
-const selectRandom = (arr) => arr[Math.floor(Math.random()*arr.length)]
+const selectRandom = arr => arr[Math.floor(Math.random()*arr.length)];
 
-const pickMystery = () => {
-    return {suspect:selectRandom(suspectsArray), room:selectRandom(roomsArray), weapon:selectRandom(weaponsArray)}
-};
+const pickMystery = () => ({suspect:selectRandom(suspectsArray), room:selectRandom(roomsArray), weapon:selectRandom(weaponsArray)})
 
 // ITERATION 3
-const revealMystery = obj => `${obj.suspect.firstName}${obj.suspect.lastName} killed Mr. Boddy using the ${obj.weapon.name} in the ${obj.room.name}!`;
+const revealMystery = obj => `${obj.suspect.firstName} ${obj.suspect.lastName} killed Mr. Boddy using the ${obj.weapon.name} in the ${obj.room.name}!`;
 
 console.log(revealMystery(pickMystery()))
